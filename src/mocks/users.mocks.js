@@ -7,7 +7,7 @@ export const generateUser = () => {
     for (let i = 0; i < numsProducts; i++){
         products.push(generateProduct());
     }
-const roles = ["cliente", "admin", "vendedor"];
+const roles = ["user", "admin", "seller"];
 
     return {
         firstName: faker.person.firstName(),

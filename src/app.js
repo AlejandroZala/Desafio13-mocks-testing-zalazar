@@ -6,8 +6,11 @@ import handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
 import passport from 'passport';
 import cookieParser from 'cookie-parser';
+import winston from 'winston';
 import {Server} from 'socket.io';
 
+import userErrorsRouter from './routes/userErrors.router.js'
+import errorHandler from './middlewares/error.js';
 import productMocksRouter from './routes/productsMocks.router.js';
 import userMocksRouter from './routes/usersMocks.router.js';
 import UserRouter from './routes/users.router.js';
@@ -103,6 +106,7 @@ app.use(cookieParser());
 
 initializePassportStrategies();
 
+app.use('/api/userErrors', userErrorsRouter);
 app.use('/api/mockingProducts',productMocksRouter);
 app.use('/api/mockingUsers', userMocksRouter);
 app.use('/api/products', productsRouter); //Cuando llegue la peticion la redirije a usersRouter
@@ -111,6 +115,8 @@ app.use('/',viewsRouter);
 // app.use('/api/sessions', sessionsRouter);
 app.use('/api/users', userRouter.getRouter());
 app.use('/api/sessions', sessionsJwtRouter.getRouter());
+app.use(errorHandler);
+
 
 //creo middleware para referenciar mi io
 app.use((req,res,next) => {

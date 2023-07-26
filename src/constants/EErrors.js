@@ -1,5 +1,7 @@
 const EErrors = {
     INCOMPLETE_VALUES: 1,
-    INVAKID_TYPES: 2
+    INVALID_TYPES: 2
 
 }
+
+export default EErrors;

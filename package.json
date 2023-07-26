@@ -32,6 +32,7 @@
     "passport-local": "^1.0.0",
     "socket.io": "^4.6.1",
     "socket.io-parser": "^4.2.4",
-    "twilio": "^4.13.0"
+    "twilio": "^4.13.0",
+    "winston": "^3.10.0"
   }
 }

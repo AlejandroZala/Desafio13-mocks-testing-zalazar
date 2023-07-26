@@ -1,9 +1,10 @@
 
 export default class ErrorService {
-    static createError({name="Error",cause, message, code=1}){
+    static createError({name="Error",cause, message, code=1, status=500}){
         const error = new Error(message,[cause]);
         error.name=name,
-        error.code=code
+        error.code=code,
+        error.status=500
         //Una vez que tenga el error LISTO => LO LANZO
         throw error;
     }

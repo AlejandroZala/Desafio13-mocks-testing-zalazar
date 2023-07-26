@@ -1,4 +1,6 @@
-Entrega CLASE 32 - Mockin y manejo de errores
+
+
+Entrega CLASE 32 - Mocking errores
 -Creo carpeta mocks, con productos y usuarios
 -Creo routes para productos y usuarios.
     POSTMAN:
@@ -6,6 +8,11 @@ Entrega CLASE 32 - Mockin y manejo de errores
     -/api/mockingUsers/mockingUsers: CREA 100 USERS SIMILARES A LOS DE MONGO
         -con campo productos tipo array de hasta 4 productos
         -con campo role (user, admin, seller)
+
+-Manejo de errores
+
+
+----------------------------------------------------------------
 
 En esta entrega modifiqué para no usar session y pasar a usar jwt.
 Todo lo que el profe hizo en clase lo pude hacer andar.

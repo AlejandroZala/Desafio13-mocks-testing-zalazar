@@ -14,15 +14,23 @@ router.get('/', (req, res) =>{
 router.post('/', (req, res) =>{
     const {firstName, lastName, email, password} = req.body;
     //Validar que si vengan todos los datos.
-    if(!firstName ||!lastName || !email || !password){
+    if(!firstName|| !lastName || !email || !password){
         //ERROR PARA EL CLIENTE: return res.staus(400).send({status:"error",error:"Incomplete values"});
         //Aquí voy a generar un error para el SERVER
         ErrorService.createError({
             name:"Error de craci+on de usuario",
             cause: userErrorIncompleteValues({firstName,lastName,email,password}),
             message: 'Error intentando insertar un nuevo usuario',
-            code: EErrors.INCOMPLETE_VALUES
+            code: EErrors.INCOMPLETE_VALUES,
+            status:400
         })
+        try{
+
+        }catch(error){
+            //analiza el error nativo de la librería que tronó
+            //Crea tu propio error, con tus códigos conocidos.
+            res.sendStatus(500);
+        }
     }
     const user = {
         firstName,

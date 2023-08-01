@@ -10,7 +10,11 @@ Entrega CLASE 32 - Mocking errores
         -con campo role (user, admin, seller)
 
 -Manejo de errores
-
+POSTMAN:
+    -Desde el body ingreso un usuario completo:
+        POST:/api/userErrors (user agregado)
+    -Desde el body ingreso un usuario incompleto: 
+        POST:/api/userErrors (mensaje de error en consola y en archivo error.log) 
 
 ----------------------------------------------------------------
 

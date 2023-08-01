@@ -38,7 +38,7 @@ router.post('/', (req, res) =>{
         email,
         password
     }
-    user.push(user);
+    users.push(user);
     res.send({status:"success",message:"Usuario agregado"})
 })
 

@@ -14,7 +14,7 @@ POSTMAN:
     -Desde el body ingreso un usuario completo:
         POST:/api/userErrors (user agregado)
     -Desde el body ingreso un usuario incompleto: 
-        POST:/api/userErrors (mensaje de error en consola y en archivo error.log) 
+        POST:/api/userErrors (mensaje de error en consola) 
 
 ----------------------------------------------------------------
 
